@@ -11671,7 +11671,7 @@
                                       f64.const 0x1.0000000000001p+53 (;=9.0072e+15;)
                                       local.set 32
                                     end
-                                    f64.const 0x1p-1 (;=0.5;)
+                                    f64.const 0.5 (;=0.5;)
                                     local.set 35
                                     block  ;; label = @17
                                       local.get 20
