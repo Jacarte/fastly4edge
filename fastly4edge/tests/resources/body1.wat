@@ -153,7 +153,7 @@ br_if 0
 local.get 17
 local.get 16
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 16
@@ -655,7 +655,7 @@ i32.const 56
 i32.add
 local.get 16
 local.get 2
-call $pop_arg
+call 59
 end
 local.get 23
 i32.const -65537
@@ -1098,7 +1098,7 @@ br 16
 end
 i32.const 0
 i32.load offset=1024
-call $strerror
+call 49
 local.set 17
 br 1
 end
@@ -1120,7 +1120,7 @@ local.get 20
 i32.const 0
 i32.lt_s
 select
-call $strnlen
+call 51
 local.tee 19
 i32.add
 local.set 16
@@ -1180,7 +1180,7 @@ local.get 5
 i32.const 4
 i32.add
 local.get 19
-call $wctomb
+call 53
 local.tee 19
 i32.const 0
 i32.lt_s
@@ -1238,7 +1238,7 @@ i32.const 256
 i32.lt_u
 local.tee 18
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -1267,7 +1267,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -1303,7 +1303,7 @@ i32.const 64
 i32.add
 local.get 26
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -1322,7 +1322,7 @@ local.get 5
 i32.const 4
 i32.add
 local.get 19
-call $wctomb
+call 53
 local.tee 19
 local.get 18
 i32.add
@@ -1341,7 +1341,7 @@ i32.const 4
 i32.add
 local.get 19
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 17
@@ -1377,7 +1377,7 @@ i32.const 256
 i32.lt_u
 local.tee 18
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -1406,7 +1406,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -1442,7 +1442,7 @@ i32.const 64
 i32.add
 local.get 23
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 21
@@ -1510,7 +1510,7 @@ block
 local.get 32
 f64.abs
 local.tee 35
-f64.const inf (;=inf;)
+f64.const inf
 f64.ne
 local.get 35
 local.get 35
@@ -1544,7 +1544,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -1573,7 +1573,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -1609,7 +1609,7 @@ i32.const 64
 i32.add
 local.get 23
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -1622,7 +1622,7 @@ br_if 0
 local.get 34
 local.get 33
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -1652,7 +1652,7 @@ f64.ne
 select
 i32.const 3
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -1680,7 +1680,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -1709,7 +1709,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -1745,7 +1745,7 @@ i32.const 64
 i32.add
 local.get 23
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 21
@@ -1762,12 +1762,12 @@ local.get 32
 local.get 5
 i32.const 364
 i32.add
-call $frexp
+call 54
 local.tee 32
 local.get 32
 f64.add
 local.tee 32
-f64.const 0x0p+0 (;=0;)
+f64.const 0
 f64.eq
 br_if 0
 local.get 5
@@ -1808,11 +1808,11 @@ local.get 20
 i32.const -12
 i32.add
 local.set 16
-f64.const 0x1p+4 (;=16;)
+f64.const 16
 local.set 35
 loop
 local.get 35
-f64.const 0x1p+4 (;=16;)
+f64.const 16
 f64.mul
 local.set 35
 local.get 16
@@ -1956,7 +1956,7 @@ block
 block
 local.get 32
 f64.abs
-f64.const 0x1p+31 (;=2.14748e+09;)
+f64.const 2147483648
 f64.lt
 i32.eqz
 br_if 0
@@ -1980,7 +1980,7 @@ local.get 32
 local.get 18
 f64.convert_i32_s
 f64.sub
-f64.const 0x1p+4 (;=16;)
+f64.const 16
 f64.mul
 local.set 32
 block
@@ -2003,7 +2003,7 @@ i32.const 0
 i32.gt_s
 br_if 0
 local.get 32
-f64.const 0x0p+0 (;=0;)
+f64.const 0
 f64.eq
 br_if 1
 end
@@ -2016,7 +2016,7 @@ i32.add
 local.set 18
 end
 local.get 32
-f64.const 0x0p+0 (;=0;)
+f64.const 0
 f64.ne
 br_if 0
 end
@@ -2080,7 +2080,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -2109,7 +2109,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -2145,7 +2145,7 @@ i32.const 64
 i32.add
 local.get 22
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -2157,7 +2157,7 @@ br_if 0
 local.get 28
 local.get 26
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -2183,7 +2183,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -2212,7 +2212,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -2248,7 +2248,7 @@ i32.const 64
 i32.add
 local.get 26
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -2262,7 +2262,7 @@ i32.const 336
 i32.add
 local.get 23
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -2284,7 +2284,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -2313,7 +2313,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -2349,7 +2349,7 @@ i32.const 64
 i32.add
 local.get 23
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -2361,7 +2361,7 @@ br_if 0
 local.get 25
 local.get 27
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -2387,7 +2387,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -2416,7 +2416,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -2452,7 +2452,7 @@ i32.const 64
 i32.add
 local.get 23
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 21
@@ -2471,7 +2471,7 @@ local.set 16
 block
 block
 local.get 32
-f64.const 0x0p+0 (;=0;)
+f64.const 0
 f64.ne
 br_if 0
 local.get 5
@@ -2487,7 +2487,7 @@ i32.add
 local.tee 17
 i32.store offset=364
 local.get 32
-f64.const 0x1p+28 (;=2.68435e+08;)
+f64.const 268435456
 f64.mul
 local.set 32
 end
@@ -2510,10 +2510,10 @@ loop
 block
 block
 local.get 32
-f64.const 0x1p+32 (;=4.29497e+09;)
+f64.const 4294967296
 f64.lt
 local.get 32
-f64.const 0x0p+0 (;=0;)
+f64.const 0
 f64.ge
 i32.and
 i32.eqz
@@ -2537,10 +2537,10 @@ local.get 32
 local.get 16
 f64.convert_i32_u
 f64.sub
-f64.const 0x1.dcd65p+29 (;=1e+09;)
+f64.const 1000000000
 f64.mul
 local.tee 32
-f64.const 0x0p+0 (;=0;)
+f64.const 0
 f64.ne
 br_if 0
 end
@@ -2932,7 +2932,7 @@ local.get 25
 i32.const 1
 i32.and
 br_if 0
-f64.const 0x1p+53 (;=9.0072e+15;)
+f64.const 9007199254740992
 local.set 32
 local.get 23
 local.get 18
@@ -2951,10 +2951,10 @@ i32.and
 i32.eqz
 br_if 1
 end
-f64.const 0x1.0000000000001p+53 (;=9.0072e+15;)
+f64.const 9007199254740994
 local.set 32
 end
-f64.const 0x1p-1 (;=0.5;)
+f64.const 0.5
 local.set 35
 block
 local.get 20
@@ -2964,13 +2964,13 @@ i32.shr_u
 local.tee 25
 i32.lt_u
 br_if 0
-f64.const 0x1p+0 (;=1;)
-f64.const 0x1.8p+0 (;=1.5;)
+f64.const 1
+f64.const 1.5
 local.get 20
 local.get 25
 i32.eq
 select
-f64.const 0x1.8p+0 (;=1.5;)
+f64.const 1.5
 local.get 36
 local.get 16
 i32.eq
@@ -3446,7 +3446,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -3475,7 +3475,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -3511,7 +3511,7 @@ i32.const 64
 i32.add
 local.get 24
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -3523,7 +3523,7 @@ br_if 0
 local.get 34
 local.get 33
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -3549,7 +3549,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -3578,7 +3578,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -3614,7 +3614,7 @@ i32.const 64
 i32.add
 local.get 24
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -3694,7 +3694,7 @@ i32.const 48
 local.get 18
 i32.const 9
 i32.add
-call $memset
+call 29
 drop
 local.get 5
 i32.const 336
@@ -3722,7 +3722,7 @@ local.get 9
 local.get 16
 i32.sub
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 23
@@ -3745,7 +3745,7 @@ br_if 0
 i32.const 5219
 i32.const 1
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -3810,7 +3810,7 @@ i32.const 48
 local.get 16
 local.get 12
 i32.add
-call $memset
+call 29
 drop
 loop
 local.get 16
@@ -3838,7 +3838,7 @@ i32.const 9
 i32.lt_s
 select
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 23
@@ -3872,7 +3872,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -3901,7 +3901,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -3937,7 +3937,7 @@ i32.const 64
 i32.add
 local.get 29
 local.get 0
-call $__fwritex
+call 43
 drop
 br 1
 end
@@ -4036,7 +4036,7 @@ i32.const 48
 local.get 17
 local.get 12
 i32.add
-call $memset
+call 29
 drop
 loop
 local.get 17
@@ -4060,7 +4060,7 @@ br_if 0
 local.get 17
 i32.const 1
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 17
@@ -4083,7 +4083,7 @@ br_if 0
 i32.const 5219
 i32.const 1
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 9
@@ -4104,7 +4104,7 @@ local.get 16
 i32.gt_s
 select
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 23
@@ -4137,7 +4137,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -4166,7 +4166,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -4202,7 +4202,7 @@ i32.const 64
 i32.add
 local.get 29
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 0
@@ -4215,7 +4215,7 @@ local.get 11
 local.get 39
 i32.sub
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -4241,7 +4241,7 @@ i32.const 256
 i32.lt_u
 local.tee 16
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -4270,7 +4270,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -4306,7 +4306,7 @@ i32.const 64
 i32.add
 local.get 20
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 21
@@ -4376,7 +4376,7 @@ i32.const 8
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=8
@@ -4391,7 +4391,7 @@ i32.const 16
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=12
@@ -4406,7 +4406,7 @@ i32.const 24
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=16
@@ -4421,7 +4421,7 @@ i32.const 32
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=20
@@ -4436,7 +4436,7 @@ i32.const 40
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=24
@@ -4451,7 +4451,7 @@ i32.const 48
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=28
@@ -4466,7 +4466,7 @@ i32.const 56
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 block
 local.get 4
 i32.load offset=32
@@ -4481,7 +4481,7 @@ i32.const 64
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 local.get 4
 i32.load offset=36
 local.tee 1
@@ -4521,7 +4521,7 @@ i32.const 72
 i32.add
 local.get 1
 local.get 2
-call $pop_arg
+call 59
 i32.const 1
 local.set 15
 br 4
@@ -4578,7 +4578,7 @@ i32.const 256
 i32.lt_u
 local.tee 18
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -4607,7 +4607,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -4643,7 +4643,7 @@ i32.const 64
 i32.add
 local.get 36
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -4655,7 +4655,7 @@ br_if 0
 local.get 29
 local.get 28
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -4681,7 +4681,7 @@ i32.const 256
 i32.lt_u
 local.tee 18
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -4710,7 +4710,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -4746,7 +4746,7 @@ i32.const 64
 i32.add
 local.get 28
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -4768,7 +4768,7 @@ i32.const 256
 i32.lt_u
 local.tee 18
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -4797,7 +4797,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -4833,7 +4833,7 @@ i32.const 64
 i32.add
 local.get 24
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 block
@@ -4845,7 +4845,7 @@ br_if 0
 local.get 17
 local.get 25
 local.get 0
-call $__fwritex
+call 43
 drop
 end
 local.get 22
@@ -4870,7 +4870,7 @@ i32.const 256
 i32.lt_u
 local.tee 18
 select
-call $memset
+call 29
 drop
 local.get 0
 i32.load
@@ -4899,7 +4899,7 @@ i32.const 64
 i32.add
 i32.const 256
 local.get 0
-call $__fwritex
+call 43
 drop
 local.get 0
 i32.load
@@ -4935,7 +4935,7 @@ i32.const 64
 i32.add
 local.get 20
 local.get 0
-call $__fwritex
+call 43
 drop
 br 0
 end
