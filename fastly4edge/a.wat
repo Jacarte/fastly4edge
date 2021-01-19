@@ -207,7 +207,7 @@
     local.get 4
     local.set 5
     return)
-  (func $babbage (type 9) (result i32)
+  (func $babbage1 (type 9) (result i32)
     (local i32 i32 i32 i32)
     i32.const -1
     local.set 1
@@ -235,7 +235,7 @@
     end
     local.get 1)
   (func $_ZN6t2wasm4main17h4e1b266ef5eab8adE (type 0)
-    call $babbage
+    call $babbage1
     drop
     return)
   (func $__original_main (type 9) (result i32)

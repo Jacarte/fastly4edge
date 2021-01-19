@@ -1,6 +1,6 @@
-.type	babbage,@function
-    babbage:
-    .functype	babbage () -> (i32)
+.type	babbage1,@function
+    babbage1:
+    .functype	babbage1 () -> (i32)
     .local  	i32, i32, i32, i32
         i32.const -1
         local.set 1
