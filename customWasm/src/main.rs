@@ -11,10 +11,10 @@ use fastly::{Body, Error, Request, RequestExt, Response, ResponseExt};
 ///
 /// This should be changed to match the name of your own backend. See the the `Hosts` section of
 /// the Fastly WASM service UI for more information.
-const BACKEND_NAME: &str = "backend_name";
+const BACKEND_NAME: &str = "hosts.secretcdn.net";
 
 /// The name of a second backend associated with this service.
-const OTHER_BACKEND_NAME: &str = "other_backend_name";
+const OTHER_BACKEND_NAME: &str = "hosts.secretcdn.net";
 
 /// The entry point for your application.
 ///

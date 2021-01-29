@@ -382,6 +382,7 @@ name = "t2wasm"
 version = "0.1.0"
 dependencies = [
  "diversifier",
+ "rand",
  "wat2mir_macro",
 ]
 

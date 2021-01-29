@@ -10,3 +10,4 @@ edition = "2018"
 [dependencies]
 wat2mir_macro = { path = "../wat2mir_macro" }
 diversifier = { path = "../diversifier" }
+rand = "0.7.2"
